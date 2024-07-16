@@ -35,10 +35,12 @@ public class Logica {
             List<String> currentAnimalTraits = listaPalpitesAnimais.get(animalName);
 
             for (String animalTrait : currentAnimalTraits) {
-                if (mensagem.perguntaTraco(animalTrait) == 0) {
+                int tracoPergunta = mensagem.perguntaTraco(animalTrait);
+                if (tracoPergunta == 0) {
                     newTraitsList.add(animalTrait);
 
-                    if (mensagem.perguntaAnimal(animalName) == 0) {
+                    int animalPergunta = mensagem.perguntaAnimal(animalName);
+                    if (animalPergunta == 0) {
                         if (mensagem.perguntaNovoJogo("eu venci") == 0) {
                             inicia();
                         } else {
